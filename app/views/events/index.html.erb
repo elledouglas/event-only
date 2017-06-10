@@ -1,1 +1,15 @@
-events#index page
+<h1>Events</h1>
+
+<%= @event do |current_event| %>
+  <div class="event">
+    <h3><%= current_event.name %></h3>
+    <h4>City: <%= current_event.city %></h4>
+    <%= current_event.description %><br />
+    <%= link_to image_tag(current_event.image, class: "event"), event_path(current_event) %>
+<% end %>
+  </div>
+
+<p>
+  <%= f.label :event %>
+  <%= f.text_field :date %>
+</p>
